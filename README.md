@@ -2,7 +2,7 @@
 ==
 操作影片：<br>
 ==
-![](https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System/qrcode_www.youtube.com.png)
+![](https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System/blob/main/qrcode_www.youtube.com.png)
 賬號説明
 ==
 沒有賬號：<br>
