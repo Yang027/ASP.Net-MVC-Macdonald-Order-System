@@ -37,7 +37,7 @@
 
 資料庫
 ==
-在`Appdata`下，一共有三張表：<br>
+在`App_Data`下，一共有三張表：<br>
 `tAccount`儲存賬號<br>
 `tItem`儲存商品，可以使用admin權限新增/刪除/修正，商品<br>
 `tdiscount`使用admin權限增加折扣碼，供使用者使用<br>
