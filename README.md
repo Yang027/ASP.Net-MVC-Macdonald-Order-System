@@ -2,7 +2,8 @@
 ==
 操作影片：<br>
 ==
-![https://www.youtube.com/watch?v=LaAgc6GFQk0](https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System/blob/main/qrcode_www.youtube.com.png"使用説明")<br>
+[![link]]([http://baidu.com](https://www.youtube.com/watch?v=LaAgc6GFQk0))  
+![link](https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System/blob/main/qrcode_www.youtube.com.png"使用説明")<br>
 賬號説明
 ==
 沒有賬號：<br>
