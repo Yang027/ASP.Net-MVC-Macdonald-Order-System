@@ -1,0 +1,66 @@
+﻿@*商品管理*@
+@model IEnumerable<A108222027_finalProject.Models.Category>
+
+<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+
+
+<div id="" class="tabcontent">
+    <h3>商品管理</h3>
+    <br>
+    <form method="post" action="@Url.Action("upload")" enctype="multipart/form-data">
+        <p>照片<input type="file" name="photo" id="photo">  <input type="submit" value="上傳"> </p>
+
+    </form>
+    <form method="post" action="@Url.Action("AddItem")">
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                <label for="photo" class="control-label col-md-2">商品圖片</label>
+                <div class="col-md-10">
+                    @if (ViewBag.photo != null)
+                    {
+                        <img src="@ViewBag.photo" id="photo" name="photo" width="120px" height="120px" />
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="cate" class="control-label col-md-2">菜單種類</label>
+                <div class="col-md-10">
+                    <select id="cate" name="cate" class="form-control">
+                        @foreach (var ii in ViewBag.cate)
+                        {
+                            <option value="@ii">
+                                @ii
+                            </option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="item" class="control-label col-md-2">商品名稱</label>
+                <div class="col-md-10">
+                    <input type="text" name="item" placeholder="商品名稱"
+                           class="form-control" required />
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group">
+                <label for="price" class="control-label col-md-2">商品價錢</label>
+                <div class="col-md-10">
+                    <input type="number" name="price" id="price" placeholder="商品價錢"
+                           class="form-control" required />
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="新增" class="btn mt-4 btn-block btn-outline-primary p-2 " />
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+

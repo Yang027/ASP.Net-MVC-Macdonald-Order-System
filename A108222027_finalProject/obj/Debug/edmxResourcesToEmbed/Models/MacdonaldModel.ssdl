@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MacdonaldModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tAccount">
+    <Key>
+      <PropertyRef Name="aAcount" />
+    </Key>
+    <Property Name="aAcount" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="aPassword" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="aHead" Type="nvarchar" MaxLength="50" />
+    <Property Name="aLevel" Type="int" Nullable="false" />
+    <Property Name="aPhone" Type="int" Nullable="false" />
+    <Property Name="aAddress" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="MacdonaldModelStoreContainer">
+    <EntitySet Name="tAccount" EntityType="Self.tAccount" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

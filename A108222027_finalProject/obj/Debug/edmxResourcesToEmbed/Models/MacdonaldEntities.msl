@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MacdonaldModelStoreContainer" CdmEntityContainer="MacdonaldEntities">
+    <EntitySetMapping Name="tAccount">
+      <EntityTypeMapping TypeName="MacdonaldModel.tAccount">
+        <MappingFragment StoreEntitySet="tAccount">
+          <ScalarProperty Name="Transaction" ColumnName="Transaction" />
+          <ScalarProperty Name="aAcount" ColumnName="aAcount" />
+          <ScalarProperty Name="aPassword" ColumnName="aPassword" />
+          <ScalarProperty Name="aHead" ColumnName="aHead" />
+          <ScalarProperty Name="aLevel" ColumnName="aLevel" />
+          <ScalarProperty Name="aPhone" ColumnName="aPhone" />
+          <ScalarProperty Name="aAddress" ColumnName="aAddress" />
+          <ScalarProperty Name="aSeq" ColumnName="aSeq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tItem">
+      <EntityTypeMapping TypeName="MacdonaldModel.tItem">
+        <MappingFragment StoreEntitySet="tItem">
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tdiscount">
+      <EntityTypeMapping TypeName="MacdonaldModel.tdiscount">
+        <MappingFragment StoreEntitySet="tdiscount">
+          <ScalarProperty Name="limit" ColumnName="limit" />
+          <ScalarProperty Name="discribe" ColumnName="discribe" />
+          <ScalarProperty Name="noob" ColumnName="noob" />
+          <ScalarProperty Name="money" ColumnName="money" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

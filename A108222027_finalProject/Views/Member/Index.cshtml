@@ -1,0 +1,25 @@
+﻿
+<link href="~/Content/tab.css" rel="stylesheet" type="text/css">
+<h6 class="text-primary" align=" right"><a href="@Url.Action("Signout")">登出</a> </h6>
+<br>
+<h3 align="left">
+    你好,
+    <label id="user">
+        @ViewBag.nowAccount
+    </label>
+    ！ <a href="@Url.Action("Index","Order")">趕快去選購吧 </a>
+</h3>
+
+
+<div class="tab">
+    <button class="tablinks" onclick="location.href='@Url.Action("_switch")?a='+'a'">會員基本資料</button>
+    <button class="tablinks" onclick="location.href='@Url.Action("_switch")?a='+'b'">訂單查詢</button>
+    <button class="tablinks" onclick="location.href='@Url.Action("_switch")?a='+'d'">折價券專區</button>
+</div>
+@switch (@ViewBag.select)
+{
+    case 'a': @Html.Partial("a"); break;
+    case 'b':@Html.Partial("b"); break;
+    case 'd':@Html.Partial("d"); break;
+    default:  break;
+}

@@ -1,0 +1,33 @@
+﻿
+<div id="d" class="tabcontent">
+    <h3>折價券專區</h3>
+    <br>
+    <br>
+    @if (ViewBag.discount != null)
+    {
+        <table border="0" width="90%">
+            <tr>
+                <th style="text-emphasis-color:aquamarine">序號</th>
+                <th style="text-emphasis-color:aquamarine">代碼</th>
+                <th style="text-emphasis-color:aquamarine">折抵金額</th>
+                <th style="text-emphasis-color:aquamarine">低消限制</th>
+                <th style="text-emphasis-color:aquamarine">描述</th>
+                <th></th>
+                @*複製按鈕*@
+            </tr>
+            @for (int i = 0; i < ViewBag.discount.Count; i++)
+            {
+                <tr>
+                    <th>@ViewBag.discount[i].Id</th>
+                    <th>@ViewBag.discount[i].Discount</th>
+                    <th>@ViewBag.discount[i].money</th>
+                    <th>@ViewBag.discount[i].limit</th>
+                    <th>@ViewBag.discount[i].discribe</th>
+                    <th><button class="btn-sm col-md-6 btn  btn-block btn-primary p-2" onclick="location.href = '@Url.Action("Copy","Member")?c=' + '@i'">點我複製</button></th>
+                </tr>
+            }
+        </table>
+    }
+    <blockquote>&nbsp;</blockquote>
+    <p></p>
+</div>

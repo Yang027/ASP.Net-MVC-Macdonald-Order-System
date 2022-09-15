@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MacdonaldModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tAccount">
+    <Key>
+      <PropertyRef Name="aAcount" />
+    </Key>
+    <Property Name="aAcount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="aLevel" Type="Int32" Nullable="false" />
+    <Property Name="aPassword" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="aHead" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aPhone" Type="Int32" Nullable="false" />
+    <Property Name="aAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="MacdonaldEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tAccount" EntityType="Self.tAccount" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,37 @@
+﻿
+<div id="a" class="tabcontent">
+    <h3>個人基本資料</h3>
+    <div class="py-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="" action="@Url.Action("save","Member")">
+                        <div class="form-group">
+                            <label>姓名</label>
+                            @*string aAcount,string aPassword,string aPhone,string aAddress*@
+                            <input type="Name" class="form-control" placeholder="Name" name="aAcount" value="@ViewBag.nowAccount">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label>電話</label>
+                            <input type="number" class="form-control" placeholder="(+86)09xxxxxxx" name="aPhone" id="g2" value="@ViewBag.nowPhone">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label>住址</label>
+                            <input type="text" class="form-control" placeholder="Address" name="aAddress" id="g3" value="@ViewBag.nowAddress">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label>密碼</label>
+                            <input type="text" class="form-control" placeholder="Password" name="aPassword" id="g5" value="@ViewBag.nowPassword">
+                        </div>
+                        <br>
+                        @*<button type="button" class="btn mt-4 btn-block btn-outline-primary p-2" onClick="save()">保存</button>*@
+                        <input type="submit" class="btn mt-4 btn-block btn-outline-primary p-2" value="保存" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

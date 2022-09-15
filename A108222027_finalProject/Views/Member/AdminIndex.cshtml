@@ -1,0 +1,41 @@
+﻿@using PagedList
+
+@model IPagedList<string>
+@{
+    ViewBag.Title = "AdminIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/tab.css" rel="stylesheet" type="text/css">
+
+<h6 class="text-primary" align=" right"><a href="@Url.Action("Signout")">登出</a> </h6>
+<br>
+<!-- Tab links -->
+<div class="tab">
+    <button class="tablinks" onclick="location.href='@Url.Action("_switch4admin")?a='+'q'">商品管理</button>
+    @*<button class="tablinks" onclick="location.href='@Url.Action("_switch4admin")?a='+'w'">商品添加</button>*@
+    <button class="tablinks" onclick="location.href='@Url.Action("_switch4admin")?a='+'e'">促銷設定</button>
+    <button class="tablinks" onclick="location.href='@Url.Action("_switch4admin")?a='+'r'">營銷記錄</button>
+</div>
+
+<!-- Tab content -->
+
+@switch (@ViewBag.select)
+{
+    case 'q':@Html.Partial("a_admin"); break;
+case 'e':@Html.Partial("c_admin"); break;
+case 'r':
+if (Model != null)
+{
+    @Html.Partial("d_admin", Model);
+}
+else
+{
+    @Html.Partial("d_admin");
+}
+
+
+break;
+default:@Html.Partial("a_admin"); break;
+}
+

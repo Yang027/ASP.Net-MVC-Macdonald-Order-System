@@ -1,0 +1,50 @@
+﻿@model A108222027_finalProject.Models.Item
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{ int j = 0;}
+<link href="~/Content/tab.css" rel="stylesheet" type="text/css">
+
+@if (TempData.ContainsKey("buy"))
+{
+    <script>alert('@TempData["buy"]');</script>
+}
+
+
+
+<div class="tab">
+    @{var cc = ViewBag.allcate;
+
+        foreach (var c in cc)
+        {
+            <button class="tablinks" onclick="location.href='@Url.Action("selectCate", "Order")?cateIndex='+'@j.ToString()'">@c</button>
+            j++;
+        }
+    }
+</div>
+<div class="row">
+
+    @{
+        var gg = ViewBag.firstcat;
+        for (int i = 0; i < gg.Count; i++)//kk=category
+        {
+            string str = gg[i].photo;
+            <div class="col-12 col-md-3" style="margin-top:10px;">
+                    <div class="img-thumbnail" style="text-align:center">
+                        @{if (str == null)
+                            {
+                                <img src="../Images/a1.jpg" width="150px" height="150px" />
+                            }
+                            else
+                            { <img src="@str" width="150px" height="150px" /> }
+                        }
+                        <h5>@gg[i].item </h5>
+                        <p>@gg[i].price</p>
+                        <p><a id="buy" name="buy" class="btn btn-info" target="_blank" onclick="location.href='@Url.Action("buy", "Order")?cateIndex='+'@ViewBag.cIndex'+'&itemIndex='+'@i.ToString()' ">加入購物車</a></p>
+                    </div>
+            </div>
+        }
+    }
+</div>

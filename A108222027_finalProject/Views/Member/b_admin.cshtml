@@ -1,0 +1,45 @@
+﻿@*商品添加*@
+<div id="" class="tabcontent">
+    <h3>商品管理</h3>
+    <br>
+    <div class="form-group">
+        <div>
+            <div class="col-md-1">
+                菜單種類
+                @using (Html.BeginForm("SelectCate", "Member"))//個別更新
+                {
+                    <select name="Id" onchange="this.form.submit();">
+                        @foreach (var ii in ViewBag.cate)
+                        {
+                            <option value="@ii">@ii</option>
+                        }
+                    </select>
+                }
+            </div>
+            <br>
+            <form method="post" action="@Url.Action("AddItem")">
+                @*category->item name*@
+                <label>商品名稱：</label><input type="text" name="item" placeholder="商品名稱" value="" />
+                @using (Html.BeginForm("Upload", "Member"))
+                {
+                    if (ViewBag.img == null)
+                    {
+                        <img src="../Images/ddc2.jpg width='150' height='120' border='0'" />
+                    }
+                    else
+                    {
+                        <img src="../Images/@ViewBag.img width='150' height='120' border='0'" />
+                    }
+                    <input type="file" name="photo" onclick="this.form.submit()">
+                    <input type="submit" value="檔案上傳" onclick="this.form.submit()"/>
+                }
+                <br>
+                <label>商品價錢：</label><input type="number" name="price" placeholder="商品價錢" /><br>
+                <input type="submit" value="添加" class="btn mt-4 btn-block btn-outline-primary p-2 ">
+                @*<input type="text" name="item" placeholder="相片" />*@
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>

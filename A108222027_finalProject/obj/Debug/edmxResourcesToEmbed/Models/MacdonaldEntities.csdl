@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MacdonaldModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tAccount">
+    <Key>
+      <PropertyRef Name="aSeq" />
+    </Key>
+    <Property Name="aAcount" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="aPassword" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="aHead" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aLevel" Type="Int32" Nullable="false" />
+    <Property Name="aPhone" Type="Int32" Nullable="false" />
+    <Property Name="aAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aSeq" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Transaction" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="MacdonaldEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tAccount" EntityType="Self.tAccount" />
+    <EntitySet Name="tItem" EntityType="MacdonaldModel.tItem" />
+    <EntitySet Name="tdiscount" EntityType="MacdonaldModel.tdiscount" />
+  </EntityContainer>
+  <EntityType Name="tItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="item" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tdiscount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Discount" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="noob" Type="Int32" />
+    <Property Name="discribe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="limit" Type="Int32" />
+  </EntityType>
+</Schema>

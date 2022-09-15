@@ -1,0 +1,105 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    if (ViewBag.cartcount > 0)
+    {
+        <div class="row">
+            <div class="col-md-5"> </div>
+            <div class="col-md-5"><h4>購物車有 @ViewBag.cart.Count 項商品</h4></div>
+        </div>
+        <table align="center" width="80%">
+            <tr>
+                <th style="text-align:center">編號</th>
+                <th style="text-align:center">商品</th>
+                <th style="text-align:center">項目名稱</th>
+                <th style="text-align:center">數量</th>
+                <th style="text-align:center">單價</th>
+                <th style="text-align:center">Subtotal</th>
+                <th style="text-align:center">Action</th>
+
+            </tr>
+            @{
+                for (int i = 0; i < ViewBag.cart.Count; i++)
+                {
+                    <tr>
+                        <th style="text-align:center">@ViewBag.cart[i].Id</th>
+                        <th style="text-align:center">
+                            @{if (@ViewBag.cart[i].photo == null)
+                                {
+                                    <img src="../Images/a1.jpg" width="150px" height="150px" />
+                                }
+                                else
+                                { <img src="@ViewBag.cart[i].photo" width="150px" height="150px" /> }
+                            }
+                            @*<img src="@ViewBag.cart[i].photo" width="60px" height="60px" />*@
+                        </th>
+                        @*圖片*@
+                        <th style="text-align:center">@ViewBag.cart[i].item</th>
+                        <th style="text-align:center">
+                            @ViewBag.count[i]
+                        </th>
+                        @*數量*@
+                        <th style="text-align:center">@ViewBag.cart[i].price</th>
+                        <th style="text-align:center">
+                            @ViewBag.subtotal[i]
+                        </th>
+                        @*subtotal*@
+                        <th style="text-align:center"> <a href="@Url.Action("Delete")?index=@ViewBag.cart[i].item" class="btn mt-4 btn-block btn-danger">刪除</a> </th>
+                    </tr>
+                }
+            }
+        </table>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-3">
+                <form class="form-inline" style="" method="post" action="@Url.Action("discount")">
+                    <label>折扣碼:</label>
+                    <input id="_discount" name="_discount">
+                    <input type="submit" class="  btn btn-primary btn-sm " value="確認" />  <p class="text-danger">@ViewBag.Err</p>
+                </form>
+            </div>
+        </div><div class="row">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-5">
+                @{
+                    string ss = "";
+                    ss = "總價：" + ViewBag.total;
+                    if (ViewBag.dd != null)
+                    {
+                        ss += "-" + ViewBag.dd;
+                    }
+                    <h4> @ss</h4>
+                }
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div><div class="row">
+            <div class="col-md-5">
+            </div>
+            <div class="col-md-5">
+                @if (ViewBag.discount != null)
+                {
+                    <h4>折扣後：@ViewBag.discount</h4>
+                }
+            </div>
+            <div class="col-md-2">
+                <button class="center-block col-md-6 btn mt-4 btn-block btn-primary p-2" onclick="location.href='@Url.Action("Buy")'">結賬</button>
+            </div>
+        </div>
+    }
+    else
+    {
+        <h2>購物車空空的哦！</h2>
+    }
+}
+

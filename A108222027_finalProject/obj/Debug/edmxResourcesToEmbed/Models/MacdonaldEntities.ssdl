@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MacdonaldModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tAccount">
+    <Key>
+      <PropertyRef Name="aSeq" />
+    </Key>
+    <Property Name="aAcount" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="aPassword" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="aHead" Type="nvarchar" MaxLength="50" />
+    <Property Name="aLevel" Type="int" Nullable="false" />
+    <Property Name="aPhone" Type="int" Nullable="false" />
+    <Property Name="aAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="aSeq" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Transaction" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="tdiscount">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Discount" Type="nvarchar(max)" />
+    <Property Name="money" Type="money" />
+    <Property Name="noob" Type="int" />
+    <Property Name="discribe" Type="nvarchar(max)" />
+    <Property Name="limit" Type="int" />
+  </EntityType>
+  <EntityType Name="tItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item" Type="nvarchar" MaxLength="50" />
+    <Property Name="price" Type="money" />
+    <Property Name="photo" Type="nvarchar(max)" />
+    <Property Name="category" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="MacdonaldModelStoreContainer">
+    <EntitySet Name="tAccount" EntityType="Self.tAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tdiscount" EntityType="Self.tdiscount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tItem" EntityType="Self.tItem" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

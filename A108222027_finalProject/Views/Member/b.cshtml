@@ -1,0 +1,94 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<string>
+
+<div id="b" class="tabcontent">
+    <h3>最近訂單</h3>
+    <h1 id="showtrans"> </h1>
+    <table id="mytrans" width="80%">
+        @{
+            if (@ViewBag.tmoney != null)
+            {
+                <tr>
+                    <th>日期</th>
+                    <th>金額</th>
+                </tr>
+                int j = 0;
+                int pp = 0;
+                if (@ViewBag.page != null)
+                {
+                    j = ViewBag.page * 6;
+                    j -= 6;
+                    pp = ViewBag.page;
+                }
+                else { j = 0; pp = 0; }
+                // int j = 0;
+                if (Model != null)
+                {
+                    foreach (var mm in Model)
+                    {
+                        <tr>
+                            <th>
+                                <button class="btn btn-link" onclick="location.href='@Url.Action("detail", "Member")?_index=' +'@j'+'&page='+'@pp'"> @mm</button>
+                            </th>
+                            <th>@ViewBag.tmoney[j]</th>
+                        </tr>
+                        j += 1;
+                    }
+                }
+            }
+            else
+            {
+                <div class="row">
+                    <p>
+                        <h2>你尚未購買任何東西！</h2>
+                    </p>
+                </div>
+            }
+        }
+    </table>
+    <br>
+    <div class="row">
+        <h2> @Html.PagedListPager(@Model, page => @Url.Action("forTransNormal", new { page }))</h2>
+    </div>
+    <br>
+    @{
+        if (ViewBag.detail != null)
+        {
+            <label id="detail" style="text-emphasis-color:aqua"> 訂單詳情</label>
+            <br>
+            <table id="checktrans" width="50%">
+                @{
+
+                    var detail = ViewBag.detail;
+                    <tr>
+                        <th style="text-align:center">編號</th>
+                        <th style="text-align:center">項目名稱</th>
+                        <th style="text-align:center">數量</th>
+                        <th style="text-align:center">單價</th>
+                        <th style="text-align:center">Subtotal</th>
+                    </tr>
+                    for (int i = 0; i < detail.Count; i++)
+                    {
+                        <tr>
+                            <th style="text-align:center">@detail[i]._id</th>
+
+                            @*圖片*@
+                            <th style="text-align:center">@detail[i]._item</th>
+                            <th style="text-align:center">
+                                @detail[i]._count
+                            </th>
+                            @*數量*@
+
+                            <th style="text-align:center">@detail[i]._price</th>
+                            <th style="text-align:center">
+                                @detail[i]._subtotal
+                            </th>
+                        </tr>
+                    }
+                }
+            </table>
+        }
+    }
+</div>
+

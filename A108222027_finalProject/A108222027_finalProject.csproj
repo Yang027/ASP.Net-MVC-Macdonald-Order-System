@@ -1,0 +1,457 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{315B5A00-A604-409E-9A79-A93B1E21014C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>A108222027_finalProject</RootNamespace>
+    <AssemblyName>A108222027_finalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Macdonald.mdf" />
+    <Content Include="App_Data\Macdonald_log.ldf">
+      <DependentUpon>Macdonald.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\tab.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\201022_麥當勞_點數兩倍送_newspage_PC.jpg" />
+    <Content Include="Images\50\50_1.png" />
+    <Content Include="Images\50\50_2.png" />
+    <Content Include="Images\50\50_3.png" />
+    <Content Include="Images\50\50_4.png" />
+    <Content Include="Images\50\50_5.png" />
+    <Content Include="Images\50\50_6.png" />
+    <Content Include="Images\50\50_7.png" />
+    <Content Include="Images\50\50_8.png" />
+    <Content Include="Images\a1.jpg" />
+    <Content Include="Images\a2.jpg" />
+    <Content Include="Images\a3.jpg" />
+    <Content Include="Images\b1.jpg" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_1.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_2.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_3.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_4.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham1.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham10.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham11.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham2.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham3.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham4.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham5.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham6.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham7.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham8.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Ham9.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Toast1.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Toast2.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Toast3.png" />
+    <Content Include="Images\breakfast\Image_Break_Topic\break_Toast4.png" />
+    <Content Include="Images\breakfast\早餐系列.txt" />
+    <Content Include="Images\coffee\Coffee_1.png" />
+    <Content Include="Images\coffee\Coffee_10.png" />
+    <Content Include="Images\coffee\Coffee_11.png" />
+    <Content Include="Images\coffee\Coffee_12.png" />
+    <Content Include="Images\coffee\Coffee_13.png" />
+    <Content Include="Images\coffee\Coffee_14.png" />
+    <Content Include="Images\coffee\Coffee_15.png" />
+    <Content Include="Images\coffee\Coffee_16.png" />
+    <Content Include="Images\coffee\Coffee_17.png" />
+    <Content Include="Images\coffee\Coffee_18.png" />
+    <Content Include="Images\coffee\Coffee_19.png" />
+    <Content Include="Images\coffee\Coffee_2.png" />
+    <Content Include="Images\coffee\Coffee_20.png" />
+    <Content Include="Images\coffee\Coffee_21.png" />
+    <Content Include="Images\coffee\Coffee_22.png" />
+    <Content Include="Images\coffee\Coffee_23.png" />
+    <Content Include="Images\coffee\Coffee_24.png" />
+    <Content Include="Images\coffee\Coffee_25.png" />
+    <Content Include="Images\coffee\Coffee_26.png" />
+    <Content Include="Images\coffee\Coffee_27.png" />
+    <Content Include="Images\coffee\Coffee_3.png" />
+    <Content Include="Images\coffee\Coffee_4.png" />
+    <Content Include="Images\coffee\Coffee_5.png" />
+    <Content Include="Images\coffee\Coffee_6.png" />
+    <Content Include="Images\coffee\Coffee_7.png" />
+    <Content Include="Images\coffee\Coffee_8.png" />
+    <Content Include="Images\coffee\Coffee_9.png" />
+    <Content Include="Images\coin\Coin_drink_1.png" />
+    <Content Include="Images\coin\Coin_drink_2.png" />
+    <Content Include="Images\coin\Coin_drink_3.png" />
+    <Content Include="Images\coin\Coin_drink_4.png" />
+    <Content Include="Images\coin\Coin_drink_5.png" />
+    <Content Include="Images\coin\Coin_drink_6.png" />
+    <Content Include="Images\coin\Coin_drink_7.png" />
+    <Content Include="Images\coin\Coin_drink_8.png" />
+    <Content Include="Images\coin\Coin_drink_9.png" />
+    <Content Include="Images\coin\Coin_fried_1.png" />
+    <Content Include="Images\coin\Coin_fried_2.png" />
+    <Content Include="Images\coin\Coin_fried_3.png" />
+    <Content Include="Images\coin\Coin_fried_4.png" />
+    <Content Include="Images\coin\Coin_fried_5.png" />
+    <Content Include="Images\coin\Coin_fried_6.png" />
+    <Content Include="Images\coin\Coin_ham1.png" />
+    <Content Include="Images\coin\Coin_ham2.png" />
+    <Content Include="Images\D1.jpg" />
+    <Content Include="Images\D2.png" />
+    <Content Include="Images\D3.png" />
+    <Content Include="Images\ddc.png" />
+    <Content Include="Images\ddc2.jpg" />
+    <Content Include="Images\eaten.jpg" />
+    <Content Include="Images\ham\Hamburger_1.png" />
+    <Content Include="Images\ham\Hamburger_10.png" />
+    <Content Include="Images\ham\Hamburger_11.png" />
+    <Content Include="Images\ham\Hamburger_12.png" />
+    <Content Include="Images\ham\Hamburger_13.png" />
+    <Content Include="Images\ham\Hamburger_14.png" />
+    <Content Include="Images\ham\Hamburger_15.png" />
+    <Content Include="Images\ham\Hamburger_16.png" />
+    <Content Include="Images\ham\Hamburger_2.png" />
+    <Content Include="Images\ham\Hamburger_3.png" />
+    <Content Include="Images\ham\Hamburger_4.png" />
+    <Content Include="Images\ham\Hamburger_5.png" />
+    <Content Include="Images\ham\Hamburger_6.png" />
+    <Content Include="Images\ham\Hamburger_7.png" />
+    <Content Include="Images\ham\Hamburger_8.png" />
+    <Content Include="Images\ham\Hamburger_9.png" />
+    <Content Include="Images\ham\Hamburger_Fried_1.png" />
+    <Content Include="Images\ham\Hamburger_Fried_2.png" />
+    <Content Include="Images\ham\Hamburger_Fried_3.png" />
+    <Content Include="Images\ham\Hamburger_Fried_4.png" />
+    <Content Include="Images\ham\Hamburger_Fried_5.png" />
+    <Content Include="Images\ham\Hamburger_Fried_6.png" />
+    <Content Include="Images\ham\Hamburger_Fried_7.png" />
+    <Content Include="Images\ham\Hamburger_Salad_1.png" />
+    <Content Include="Images\ham\Hamburger_Salad_2.png" />
+    <Content Include="Images\images.png" />
+    <Content Include="Images\img-1554178414-23505.jpg" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\maxresdefault.jpg" />
+    <Content Include="Images\mCardDoubleThePoints_200729_1260x560.jpg" />
+    <Content Include="Images\Mcdonalds-Logo-PNG-Transparent-Image_600.png" />
+    <Content Include="Images\mcdonalds.png" />
+    <Content Include="Images\sc1.png" />
+    <Content Include="Images\share\Share_1.png" />
+    <Content Include="Images\share\Share_2.png" />
+    <Content Include="Images\share\Share_3.png" />
+    <Content Include="Images\share\Share_4.png" />
+    <Content Include="Images\shoppingcart.ico" />
+    <Content Include="Images\shoppingcart.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_1.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_2.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_3.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_4.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_5.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_6.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_7.png" />
+    <Content Include="Images\snack\drinkSweet_Drink_8.png" />
+    <Content Include="Images\snack\drinkSweet_Fried_1.png" />
+    <Content Include="Images\snack\drinkSweet_Fried_2.png" />
+    <Content Include="Images\snack\drinkSweet_Fried_3.png" />
+    <Content Include="Images\snack\drinkSweet_Fried_4.png" />
+    <Content Include="Images\snack\drinkSweet_Fried_5.png" />
+    <Content Include="Images\snack\drinkSweet_Ice_1.png" />
+    <Content Include="Images\snack\drinkSweet_Ice_2.png" />
+    <Content Include="Images\snack\drinkSweet_Ice_3.png" />
+    <Content Include="Images\snack\drinkSweet_Ice_4.png" />
+    <Content Include="Images\snack\drinkSweet_Salad_1.png" />
+    <Content Include="Images\snack\drinkSweet_Salad_2.png" />
+    <Content Include="Images\snack\drinkSweet_Salad_3.png" />
+    <Content Include="Images\snack\drinkSweet_Salad_4.png" />
+    <Content Include="Images\sw2.jpg" />
+    <Content Include="Images\sw3.jpeg" />
+    <Content Include="Images\sw3.jpg" />
+    <Content Include="Images\taocan\With_1.png" />
+    <Content Include="Images\taocan\With_2.png" />
+    <Content Include="Images\taocan\With_3.png" />
+    <Content Include="Images\taocan\With_4.png" />
+    <Content Include="Images\taocan\With_5.png" />
+    <Content Include="Images\user.png" />
+    <Content Include="Images\Webp.net-resizeimage.jpg" />
+    <Content Include="Models\MacdonaldEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MacdonaldEntities.edmx</DependentUpon>
+      <LastGenOutput>MacdonaldEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MacdonaldEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MacdonaldEntities.edmx</DependentUpon>
+      <LastGenOutput>MacdonaldEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\270.png" />
+    <Content Include="Resources\61.png" />
+    <Content Include="Resources\bf5fa1e612d2c8c9b5861aba6d1e1748.jpg" />
+    <Content Include="Resources\bk10.jpg" />
+    <Content Include="Resources\bk2.png" />
+    <Content Include="Resources\bk3.jpg" />
+    <Content Include="Resources\Bk5.jpg" />
+    <Content Include="Resources\bk6.jpg" />
+    <Content Include="Resources\bk7.jpg" />
+    <Content Include="Resources\bk8.jpg" />
+    <Content Include="Resources\bk9.jpg" />
+    <Content Include="Resources\bkadv.png" />
+    <Content Include="Resources\employeeman.png" />
+    <Content Include="Resources\head.png" />
+    <Content Include="Resources\head1.png" />
+    <Content Include="Resources\headd.png" />
+    <Content Include="Resources\headd1.png" />
+    <Content Include="Resources\logo4.png" />
+    <Content Include="Resources\maxresdefault.jpg" />
+    <Content Include="Resources\mcd-new-2.jpg" />
+    <Content Include="Resources\McDonalds_SUN4_800.jpg" />
+    <Content Include="Resources\mclogocir.png" />
+    <Content Include="Resources\oderbk.png" />
+    <Content Include="Resources\orderbreak.png" />
+    <Content Include="Resources\ordernormal.png" />
+    <Content Include="Resources\selfacc.png" />
+    <Content Include="Resources\shu.png" />
+    <Content Include="Resources\shutterstock_1036017343.jpg" />
+    <Content Include="Resources\storemanage.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <EntityDeploy Include="Models\MacdonaldEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MacdonaldEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MacdonaldEntities.edmx.diagram">
+      <DependentUpon>MacdonaldEntities.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <None Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\SignupController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\MacdonaldEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MacdonaldEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MacdonaldEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MacdonaldEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MacdonaldEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MacdonaldEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shoppingcart.cs" />
+    <Compile Include="Models\tAccount.cs">
+      <DependentUpon>MacdonaldEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tdiscount.cs">
+      <DependentUpon>MacdonaldEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tItem.cs">
+      <DependentUpon>MacdonaldEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Transaction.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Member\b.cshtml" />
+    <Content Include="Views\Member\d.cshtml" />
+    <Content Include="Views\Member\a.cshtml" />
+    <Content Include="Views\Signup\Index.cshtml" />
+    <Content Include="Views\Member\AdminIndex.cshtml" />
+    <Content Include="Views\Member\a_admin.cshtml" />
+    <Content Include="Views\Member\b_admin.cshtml" />
+    <Content Include="Views\Member\c_admin.cshtml" />
+    <Content Include="Views\Member\d_admin.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\eachitem.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\shopping\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53718</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53718/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
