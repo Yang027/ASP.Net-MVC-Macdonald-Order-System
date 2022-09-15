@@ -16,9 +16,9 @@ Author：A108222027楊淑鈞<br>
 -查詢訂單<br>
 -查詢折價券<br>
 
-2.系統管理員的權限：
-*Account:Admin<br>
-*password:admin<br>
+2.系統管理員的權限：<br>
+`Account:Admin`<br>
+`password:admin`<br>
 -購買餐點<br>
 -新增商品<br>
 -查詢所有人的訂單<br>
