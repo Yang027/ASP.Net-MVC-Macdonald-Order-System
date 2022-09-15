@@ -1,9 +1,8 @@
 綫上麥當勞點餐使用説明
 ==
 操作影片：<br>
-==
-[![](https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System/blob/main/qrcode_www.youtube.com.png)](https://www.youtube.com/watch?v=LaAgc6GFQk0)  
-"使用説明"<br>
+--
+[![](https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System/blob/main/qrcode_www.youtube.com.png)](https://www.youtube.com/watch?v=LaAgc6GFQk0 "使用説明")<br>
 賬號説明
 ==
 沒有賬號：<br>
