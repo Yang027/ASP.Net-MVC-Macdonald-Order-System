@@ -43,8 +43,5 @@
 `tItem`儲存商品，可以使用admin權限新增/刪除/修正，商品<br>
 `tdiscount`使用admin權限增加折扣碼，供使用者使用<br>
 
-#操作影片演示：<br>
-#--
-#[![](https://github.com/Yang027/ASP.Net-MVC-Macdonald-Order-System/blob/main/qrcode_www.youtube.com.png)](https://www.youtube.com/watch?v=LaAgc6GFQk0 "使用説明")<br>
 
 更新：歷史訂單加上了pagelist，更加整潔
